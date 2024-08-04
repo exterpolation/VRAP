@@ -28,11 +28,11 @@ silly
 要运行此程序，请按照以下步骤操作：
 
 1. 打开命令行或终端。
-2. 导航到包含`silly.py`文件的目录。
+2. 导航到包含`main.py`文件的目录。
 3. 执行以下命令：
 
 ```bash 
-bash python silly.py
+bash python main.py
 ```
 
 这将在控制台上打印出“你好，世界！”。
@@ -40,7 +40,7 @@ bash python silly.py
 示例代码解释
 ---------
 
-`silly.py`文件中的代码非常简洁：
+`main.py`文件中的代码非常简洁：
 python print("你好，世界！")
 
 这里，我们使用Python内置的`print()`函数来向控制台输出字符串“你好，世界！”。
