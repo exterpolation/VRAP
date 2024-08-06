@@ -13,7 +13,7 @@ agent_pool = ["Astra", "Brimstone", "Clove", "Harbor", "Omen", "Viper", "Chamber
               "Phoenix", "Raze", "Reyna", "Yoru"]
 
 
-def animated_dots(duration=5, interval=0.5):
+def animated_dots(duration=5, interval=0.5) -> str:
     end_time = time.time() + duration
     while time.time() < end_time:
         for dots in range(4):
@@ -25,14 +25,15 @@ def greet_user() -> str:
     return f"Welcome to VRAP (Valorant Agent Random Picker), {os.getlogin()}!"
 
 
-def print_agent_pool():
+def print_agent_pool() -> None:
     print(f"\n    {Fore.GREEN}[!] Current agent pool:")
     for i, agent in enumerate(agent_pool, 1):
         print(f"    {Fore.CYAN}{i}. {agent}")
 
 
-def modify_agent_pool():
+def modify_agent_pool() -> None:
     print_agent_pool()
+
     while True:
         action = input(f"\n    {Fore.YELLOW}[?] Add or remove agents? (a/r): ").lower().strip()
         if action in ['a', 'r']:
@@ -55,9 +56,11 @@ def modify_agent_pool():
                 agent_pool.remove(agent)
             else:
                 print(f"{Fore.RED}[!] {agent} is not in the pool.")
+
     print_agent_pool()
 
 
+# TODO: Ask the user if they want more agents to be picked instead of just one
 def main() -> int:
     print(fr"""{Fore.WHITE}
       ___      ___ ________  ________  ________
@@ -77,6 +80,7 @@ def main() -> int:
 
     if input(f"\n    {Fore.YELLOW}[?] Modify agent pool? (y/N): ").lower().strip() == "n":
         print(f"\n    {Fore.GREEN}[!] Choosing a random agent", end='', flush=True)
+
         for dots in animated_dots(duration=5, interval=0.5):
             print(f'\r    {Fore.GREEN}[!] Choosing a random agent{dots}', end='', flush=True)
         print(f"\n    {Fore.GREEN}[!] Selected agent: {rand.choice(agent_pool)}")
@@ -86,6 +90,7 @@ def main() -> int:
         modify_agent_pool()
         if input(f"\n    {Fore.YELLOW}[?] Done modifying and select a random agent? (y/n): ").lower().strip() == "y":
             print(f"\n    {Fore.GREEN}[!] Choosing a random agent", end='', flush=True)
+
             for dots in animated_dots(duration=5, interval=0.5):
                 print(f'\r    {Fore.GREEN}[!] Choosing a random agent{dots}', end='', flush=True)
             print(f"\n    {Fore.GREEN}[!] Selected agent: {rand.choice(agent_pool)}")
