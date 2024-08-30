@@ -10,7 +10,7 @@ author_discord = "tickflow"
 
 agent_pool = ["Astra", "Brimstone", "Clove", "Harbor", "Omen", "Viper", "Chamber", "Cypher",
               "Deadlock", "Killjoy", "Sage", "Breach", "Fade", "Gekko", "KAY/O", "Skye", "Sova", "Iso", "Jett", "Neon",
-              "Phoenix", "Raze", "Reyna", "Yoru"]
+              "Phoenix", "Raze", "Reyna", "Yoru", "Vyse"]
 
 
 def animated_dots(duration=5, interval=0.5) -> str:
